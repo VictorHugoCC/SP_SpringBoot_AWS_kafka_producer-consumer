@@ -1,0 +1,18 @@
+2024-11-23 19:52:57 [restartedMain] INFO  mensageria.com.producer.ProducerApplication - Starting ProducerApplication using Java 22.0.2 with PID 192 (C:\Users\victor\Desktop\producer\producer\target\classes started by victor in C:\Users\victor\Desktop\producer)
+2024-11-23 19:52:57 [restartedMain] INFO  mensageria.com.producer.ProducerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-23 19:52:58 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8092 (http)
+2024-11-23 19:52:58 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8092"]
+2024-11-23 19:52:58 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 19:52:58 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-23 19:52:58 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 19:52:58 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 267 ms
+2024-11-23 19:52:58 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-23 19:52:58 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8092"]
+2024-11-23 19:52:58 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8092 (http) with context path '/'
+2024-11-23 19:52:58 [restartedMain] INFO  mensageria.com.producer.ProducerApplication - Started ProducerApplication in 0.477 seconds (process running for 4581.055)
+2024-11-23 19:52:58 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-23 19:53:52 [File Watcher] INFO  org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-23 19:53:52 [Thread-7] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2024-11-23 19:53:52 [tomcat-shutdown] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8092"]
+2024-11-23 19:53:52 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2024-11-23 19:53:52 [Thread-7] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8092"]

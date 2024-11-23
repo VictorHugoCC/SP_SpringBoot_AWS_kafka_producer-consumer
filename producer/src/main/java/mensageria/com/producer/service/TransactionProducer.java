@@ -1,31 +1,36 @@
 package mensageria.com.producer.service;
 
 import mensageria.com.producer.controller.dto.TransactionDTO;
-import org.springframework.beans.factory.annotation.Value;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Service
 public class TransactionProducer {
 
-    @Value("${topic.name}")
-    private String topic;
-
+    private static final Logger logger = LoggerFactory.getLogger(TransactionProducer.class);
     private final KafkaTemplate<String, TransactionDTO> kafkaTemplate;
 
     public TransactionProducer(KafkaTemplate<String, TransactionDTO> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void send(TransactionDTO transaction) {
+    public void sendMessage(TransactionDTO transactionDTO) {
         try {
-            kafkaTemplate.send(topic, transaction);
-            log.info("Mensagem enviada com sucesso: {}", transaction);
-        } catch (Exception e) {
-            log.error("Erro ao enviar mensagem: {}", e.getMessage());
+            validateTransaction(transactionDTO);
+            kafkaTemplate.send("transactions", transactionDTO);
+            logger.info("Mensagem enviada com sucesso para o tópico 'transactions': {}", transactionDTO);
+        } catch (IllegalArgumentException ex) {
+            logger.warn("Mensagem inválida. Falha na validação: {}", transactionDTO, ex);
+        } catch (Exception ex) {
+            logger.error("Erro ao enviar mensagem para o Kafka: {}", transactionDTO, ex);
+        }
+    }
+
+    private void validateTransaction(TransactionDTO transactionDTO) {
+        if (transactionDTO.getId() == null || transactionDTO.getStatus() == null) {
+            throw new IllegalArgumentException("Campos obrigatórios não informados!");
         }
     }
 }
