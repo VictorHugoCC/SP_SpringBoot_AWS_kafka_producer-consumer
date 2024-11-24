@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/producer.iml" filepath="$PROJECT_DIR$/.idea/producer.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/docker.iml" filepath="$PROJECT_DIR$/.idea/docker.iml" />
+>>>>>>> 9e8318612acf10df8efd142b1d4425450500987a
     </modules>
   </component>
 </project>
