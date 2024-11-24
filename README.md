@@ -77,7 +77,7 @@ Before running the project, follow these steps:
    ```
 
 3. **Testing Message Flow:**
-   - Send a message using the Producer API (e.g., `POST /transactions` with JSON payload).
+   - Send a message using the Producer API (`POST /transactions` with JSON payload).
    - Observe the Consumer logs for message consumption and processing.
 
 ## 📂 Directory Structure
@@ -102,4 +102,19 @@ Before running the project, follow these steps:
 
 ## 🎬 Demonstration
 
-### Starting the Docker environment:
+Here are some examples of the project in action:
+
+### Docker Setup
+![Docker Setup](./assets/docker-image.jpeg)
+
+### Example 1
+Json:
+![Example 1](./assets/image-1.jpeg)
+
+Exit on consumer:
+### Example 2
+![Example 2](./assets/image-2.jpeg)
+
+Acess this part using the command `kafka-console-consumer --bootstrap-server localhost:9092 --topic transactions --from-beginning`
+### Checkout at kafka-console-consumer to se more informations
+![Example 2](./assets/kafka-console-consumer.jpeg)
