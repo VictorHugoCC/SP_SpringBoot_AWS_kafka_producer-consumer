@@ -31,7 +31,7 @@ public class KafkaConsumerConfig {
         ConcurrentKafkaListenerContainerFactory<String, TransactionDTO> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
-        factory.setCommonErrorHandler(new DefaultErrorHandler(new FixedBackOff(1000L, 3))); // Configurar retry
+        factory.setCommonErrorHandler(new DefaultErrorHandler(new FixedBackOff(1000L, 3)));
         return factory;
     }
 
@@ -40,7 +40,7 @@ public class KafkaConsumerConfig {
         return new DefaultKafkaConsumerFactory<>(
                 consumerConfigs(),
                 new StringDeserializer(),
-                new ErrorHandlingDeserializer<>(new JsonDeserializer<>(TransactionDTO.class, false)) // Type headers desativados
+                new ErrorHandlingDeserializer<>(new JsonDeserializer<>(TransactionDTO.class, false))
         );
     }
 
@@ -49,7 +49,7 @@ public class KafkaConsumerConfig {
         Map<String, Object> configs = new HashMap<>();
         configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class); // Serializador JSON
+        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
 
         ProducerFactory<String, TransactionDTO> producerFactory = new DefaultKafkaProducerFactory<>(configs);
         return new KafkaTemplate<>(producerFactory);

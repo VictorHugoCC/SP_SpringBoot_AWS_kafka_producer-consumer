@@ -13,9 +13,9 @@ public class DLQConsumer {
 
     @KafkaListener(topics = "transactions-dlq", groupId = "dlq-group")
     public void consumeDLQ(TransactionDTO transaction) {
-        logger.error("Mensagem recebida no DLQ: {}", transaction);
+        logger.error("Message received in DLQ: {}", transaction);
 
-        logger.error("Motivo: Esta mensagem foi redirecionada devido a falha no processamento inicial.");
+        logger.error("Reason: This message was redirected due to a failure in initial processing.");
 
     }
 
