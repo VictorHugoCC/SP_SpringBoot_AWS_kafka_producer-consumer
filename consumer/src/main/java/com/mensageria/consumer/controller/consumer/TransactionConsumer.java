@@ -17,16 +17,16 @@ public class TransactionConsumer {
     @KafkaListener(topics = "transactions", groupId = "consumer-group", containerFactory = "kafkaListenerContainerFactory")
     public void consume(TransactionDTO transaction, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
         try {
-            System.out.println("Mensagem recebida do tópico: " + topic);
-            System.out.println("Conteúdo da mensagem: " + transaction);
+            System.out.println("Message received from topic: " + topic);
+            System.out.println("Message content: " + transaction);
 
             if ("FAILED".equals(transaction.getStatus())) {
-                throw new RuntimeException("Erro ao processar mensagem com status 'FAILED'");
+                throw new RuntimeException("Error processing message with status 'FAILED'");
             }
 
-            System.out.println("Mensagem processada com sucesso!");
+            System.out.println("Message processed successfully!");
         } catch (Exception ex) {
-            System.err.println("Erro ao processar mensagem. Enviando para DLQ. Motivo: " + ex.getMessage());
+            System.err.println("Error processing message. Redirecting to DLQ. Reason: " + ex.getMessage());
 
             kafkaTemplateForDLQ.send("transactions-dlq", transaction);
         }
