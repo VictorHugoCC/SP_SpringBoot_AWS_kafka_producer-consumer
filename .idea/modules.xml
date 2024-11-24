@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/consumer.iml" filepath="$PROJECT_DIR$/.idea/consumer.iml" />
-=======
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/producer.iml" filepath="$PROJECT_DIR$/.idea/producer.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/docker.iml" filepath="$PROJECT_DIR$/.idea/docker.iml" />
->>>>>>> 9e8318612acf10df8efd142b1d4425450500987a
->>>>>>> 6d3693343bdca42d652dcb2bd88829ee94d7f891
-    </modules>
-  </component>
+    <component name="ProjectModuleManager">
+        <modules>
+            <module fileurl="file://$PROJECT_DIR$/.idea/consumer.iml" filepath="$PROJECT_DIR$/.idea/consumer.iml" />
+            <module fileurl="file://$PROJECT_DIR$/.idea/producer.iml" filepath="$PROJECT_DIR$/.idea/producer.iml" />
+            <module fileurl="file://$PROJECT_DIR$/.idea/docker.iml" filepath="$PROJECT_DIR$/.idea/docker.iml" />
+        </modules>
+    </component>
 </project>
