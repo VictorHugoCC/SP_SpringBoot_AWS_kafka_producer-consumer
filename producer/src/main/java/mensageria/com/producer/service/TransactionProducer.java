@@ -20,17 +20,17 @@ public class TransactionProducer {
         try {
             validateTransaction(transactionDTO);
             kafkaTemplate.send("transactions", transactionDTO);
-            logger.info("Mensagem enviada com sucesso para o tópico 'transactions': {}", transactionDTO);
+            logger.info("Message successfully sent to the 'transactions' topic:: {}", transactionDTO);
         } catch (IllegalArgumentException ex) {
-            logger.warn("Mensagem inválida. Falha na validação: {}", transactionDTO, ex);
+            logger.warn("Invalid message. Validation failed: {}", transactionDTO, ex);
         } catch (Exception ex) {
-            logger.error("Erro ao enviar mensagem para o Kafka: {}", transactionDTO, ex);
+            logger.error("Error while sending message to Kafka: {}", transactionDTO, ex);
         }
     }
 
     private void validateTransaction(TransactionDTO transactionDTO) {
         if (transactionDTO.getId() == null || transactionDTO.getStatus() == null) {
-            throw new IllegalArgumentException("Campos obrigatórios não informados!");
+            throw new IllegalArgumentException("Required fields not provided!");
         }
     }
 }

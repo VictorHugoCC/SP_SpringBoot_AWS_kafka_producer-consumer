@@ -23,8 +23,8 @@ public class TransactionController {
     @PostMapping
     public ResponseEntity<?> createTransaction(@Valid @RequestBody TransactionDTO transactionDTO) {
         if (transactionDTO.getId() == null || transactionDTO.getStatus() == null) {
-        logger.info("Recebendo transação para envio ao Kafka: {}", transactionDTO);
-            return ResponseEntity.badRequest().body("Id ou Status não podem ser nulos.");
+        logger.info("Receiving transaction for sending to Kafka: {}", transactionDTO);
+            return ResponseEntity.badRequest().body("Id or Status cannot be null.");
         }
         transactionProducer.sendMessage(transactionDTO);
         return ResponseEntity.ok().build();
